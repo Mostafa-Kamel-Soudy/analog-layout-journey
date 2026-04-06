@@ -9,14 +9,14 @@ Any designs, examples, or layouts shared here are independently created for educ
 ---
 
 ## About
-Documenting my journey in analog IC layout design, focusing on clean, matching-aware layouts and their impact on circuit performance.
+Documenting my journey in analog IC layout design, focusing on clean, matching-aware layouts and understanding how physical implementation impacts circuit behavior.
 
 ---
 
 ## Focus
 - Matching (common-centroid, interdigitation)
 - LDE awareness (WPE, LOD)
-- Parasitic-aware routing
+- Parasitic-aware routing (RC effects)
 - Symmetry-driven layout
 - Clean DRC/LVS
 
@@ -34,30 +34,31 @@ Documenting my journey in analog IC layout design, focusing on clean, matching-a
 ### Week 1 – CMOS & Short Channel Effects
 
 #### Topics Covered
-CMOS processing and short channel effects (SCE), and their impact on analog performance.
+CMOS processing and short channel effects (SCE), and their impact on device behavior.
 
 #### Key Takeaways
-- W/L directly affects gain, speed, and matching  
-- SCE degrades analog performance (gain, matching)  
-- Layout must account for process variations and LDE  
+- W/L is not only an electrical parameter, but also a physical layout constraint  
+- Short channel devices are highly sensitive to process variations  
+- Layout must consider parasitics, matching, and LDE effects  
 
 #### My Understanding
 Short channel effects are not only device-level concerns.  
-They strongly influence layout decisions in analog design.  
+They directly influence layout decisions, especially in analog design.  
 
-Using minimum channel length improves speed but degrades matching and gain.  
-For critical analog blocks, longer channel lengths are often preferred.
+Using minimum channel length reduces area but increases sensitivity to variation and mismatch.  
+For critical analog blocks, longer channel lengths provide more robust matching and layout tolerance.
 
 #### If I Were Designing
 For a differential pair:
-- Avoid minimum channel length for better matching  
-- Use symmetry and common-centroid placement  
-- Consider LDE effects near edges  
+- I would avoid minimum channel length to reduce mismatch sensitivity  
+- I would enforce strict symmetry in device placement  
+- I would use common-centroid structures when needed  
+- I would consider device environment (edges, proximity → LDE effects)  
 
 #### Questions I’m Investigating
-- How much does increasing channel length improve matching in practice?  
-- What is the real trade-off between area and performance?  
-- How do LDE effects vary across layout positions?  
+- How does increasing channel length affect mismatch and variability in practice?  
+- What is the trade-off between area, parasitics, and matching quality?  
+- How do LDE effects (WPE, LOD) vary with device placement?  
 
 ---
 
@@ -67,4 +68,4 @@ For a differential pair:
 ---
 
 ## Goal
-To build high-quality analog layouts and grow into a high-performance Analog IC Layout Engineer.
+To build high-quality analog layouts with strong awareness of matching, parasitics, and manufacturability.
