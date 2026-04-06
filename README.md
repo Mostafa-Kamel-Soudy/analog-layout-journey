@@ -9,50 +9,55 @@ Any designs, examples, or layouts shared here are independently created for educ
 ---
 
 ## About
-This repository documents my hands-on journey in analog IC layout design, focusing on building clean, matching-aware layouts and understanding the physical impact on circuit performance.
+Documenting my journey in analog IC layout design, focusing on clean, matching-aware layouts and their impact on circuit performance.
 
 ---
 
 ## Focus
-- Matching techniques (common-centroid, interdigitation)
-- Layout-dependent effects (LDE: WPE, LOD)
+- Matching (common-centroid, interdigitation)
+- LDE awareness (WPE, LOD)
 - Parasitic-aware routing
 - Symmetry-driven layout
-- Clean DRC/LVS verification
+- Clean DRC/LVS
 
 ---
 
 ## Tools
-- Cadence Virtuoso
-- Synopsys Custom Compiler
-- Mentor Calibre
+- Cadence Virtuoso  
+- Synopsys Custom Compiler  
+- Mentor Calibre  
 
 ---
 
 ## Progress
 
-### Week 1 – CMOS Technology & Short Channel Effects
+### Week 1 – CMOS & Short Channel Effects
 
 #### Topics Covered
-- CMOS Processing Overview  
-- Short Channel Effects (SCE)  
-- Impact of fabrication on device behavior  
+CMOS processing and short channel effects (SCE), and their impact on analog performance.
 
-#### Key Insights
-- Device dimensions (W/L) directly impact analog performance  
-- Short channel effects (e.g., DIBL, velocity saturation) degrade gain and matching  
-- Process variations must be considered during layout  
+#### Key Takeaways
+- W/L directly affects gain, speed, and matching  
+- SCE degrades analog performance (gain, matching)  
+- Layout must account for process variations and LDE  
 
-#### Layout Implications
-- Prefer longer channel lengths for critical analog devices  
-- Maintain symmetry in sensitive structures (e.g., differential pairs)  
-- Consider LDE (WPE, LOD) during device placement  
+#### My Understanding
+Short channel effects are not only device-level concerns.  
+They strongly influence layout decisions in analog design.  
 
-#### Practice
-- Reviewing basic layout structures and preparing for implementation  
+Using minimum channel length improves speed but degrades matching and gain.  
+For critical analog blocks, longer channel lengths are often preferred.
 
-#### Next Step
-- Apply these concepts in simple layouts (e.g., current mirror, differential pair)
+#### If I Were Designing
+For a differential pair:
+- Avoid minimum channel length for better matching  
+- Use symmetry and common-centroid placement  
+- Consider LDE effects near edges  
+
+#### Questions I’m Investigating
+- How much does increasing channel length improve matching in practice?  
+- What is the real trade-off between area and performance?  
+- How do LDE effects vary across layout positions?  
 
 ---
 
